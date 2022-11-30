@@ -6,7 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import useToken from "../../hooks/useToken";
 
 const SignUp = () => {
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, setUser } = useContext(AuthContext);
   const {
     register,
     formState: { errors },
@@ -29,6 +29,7 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        setUser(user);
         const userInfo = {
           displayName: data.name,
         };

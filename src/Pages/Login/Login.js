@@ -30,11 +30,12 @@ const Login = () => {
     const email = data.email;
     const password = data.password;
     setLoginError("");
-    setUser();
+
     signIn(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        setUser(user);
         setLoginUserEmail(email);
         reset();
       })
@@ -49,6 +50,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        setUser(user);
         setLoginUserEmail();
       })
       .catch((error) => console.log(error));
