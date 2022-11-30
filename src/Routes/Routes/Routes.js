@@ -80,7 +80,9 @@ const Routes = () => {
           path: "/dashboard/payment/:id",
           element: <Payment></Payment>,
           loader: ({ params }) => {
-            return fetch(`http://localhost:5000/bookings/${params._id}`);
+            return fetch(
+              `https://doctors-portal-server-mauve-chi.vercel.app/bookings/${params._id}`
+            );
           },
         },
       ],
